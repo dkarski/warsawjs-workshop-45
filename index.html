@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=100, initial-scale=1" />
+    <title>WarsawJS</title>
+    <meta name="description" content="WarsawJS Workshop#45" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script type="module" src="src/utils/covert-string-to-html-element.js"></script>
+    <script type="module" src="src/utils/generate-uuid.js"></script>
+    <script type="module" src="src/utils/icons.js"></script>
+    <script type="module" src="src/utils/subject.js"></script>
+    <script type="module" src="src/store/store.js"></script>
+    <script type="module" src="src/app/file-manager/file-upload-input/file-upload-input.js"></script>
+    <script type="module" src="src/app/file-manager/file-type-list/file-type-list.js"></script>
+    <script type="module" src="src/app/file-manager/file-list/file-list.js"></script>
+    <script type="module" src="src/app/file-manager/file-manager.js"></script>
+    <script type="module" src="src/app/file-detail-modal/file-detail-modal.js"></script>
+    <script type="module" src="src/app/app.js"></script>
+    <script type="module" src="src/bootstrap.js"></script>
+    <script>
+      window.transformBytes = function(bytes, dp=2) {
+        const thresh = 1000;
+
+        if (Math.abs(bytes) < thresh) {
+          return bytes + ' B';
+        }
+
+        const units = ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+
+        let u = -1;
+        const r = 10**dp;
+
+        do {
+          bytes /= thresh;
+          ++u;
+        } while (Math.round(Math.abs(bytes) * r) / r >= thresh && u < units.length - 1);
+
+
+        return bytes.toFixed(dp) + ' ' + units[u];
+      }
+    </script>
+  </body>
+</html>
