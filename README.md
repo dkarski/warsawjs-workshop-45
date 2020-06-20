@@ -5,7 +5,7 @@
 
 ## Demo 🎉
 
-<https://dkarski.github.io/warsawjs-workshop-45>
+<https://dkarski.github.io/warsawjs-workshop-45/>
 
 
 ## Slides
