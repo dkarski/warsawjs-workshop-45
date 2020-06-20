@@ -35,7 +35,9 @@ export class FileTypeList {
     const { state } = store;
     const { selectedFileType } = state;
 
-    const fileTypes = store.getFileList().map(({ type }) => type);
+    const fileTypes = Array.from(
+      new Set(store.getFileList().map(({ type }) => type))
+    );
 
     const htmlString = this.generateHTMLString({ fileTypes, selectedFileType });
     const childElement = convertStringToHTMLElement(htmlString);

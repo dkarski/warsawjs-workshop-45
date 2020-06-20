@@ -18,8 +18,7 @@ export class FileManager {
     const fileList = new FileList(childElement);
     const fileUploadInput = new FileUploadInput(childElement);
 
-    // FIXME: The below line is commented because component return duplicate types of file.
-    // fileTypeList.render();
+    fileTypeList.render();
     fileList.render();
     fileUploadInput.render();
   }

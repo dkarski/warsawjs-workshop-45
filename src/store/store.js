@@ -6,23 +6,21 @@ class Store {
     this.subject = subject;
   }
 
-  getFileById(fileId) {
-    this.state.files.find(({ id }) => id === fileId);
-    return this.state.files.find(({ id }) => id === fileId);
+  getFileById(fileId){
+    return this.state.files[fileId]
   }
 
-  getFileList() {
-    return [...this.state.files];
+  getFileList(){
+    return Object.keys(this.state.files).map(key => this.state.files[key])
   }
 
-  addFile(file) {
-    this.state.files.unshift(file);
+  addFile(file){
+    this.state.files[file.id] = file;
     this.subject.notify({ ...this.state });
   }
 
-  removeFileById(fileId) {
-    const files = this.state.files.filter(({ id }) => id !== fileId);
-    this.state = { ...this.state, files };
+  removeFileById(fileId){
+    delete this.state.files[fileId]
     this.subject.notify({ ...this.state });
   }
 

@@ -20,7 +20,7 @@ export class FileDetailModal {
 					</header>
 					<div class="modal__description">
 					  <p><b>type:</b> ${file.type}</p>
-					  <p><b>size:</b> ${transformBytes(file.size)}</p>
+					  <p><b>size:</b> ${file.getFriendlySize()}</p>
 					</div>
 				</div>
 			</div>
