@@ -82,7 +82,7 @@ do klasy bazowej `File`, dzięki temu ukryjesz ją przed innymi klasami i sprę�
 #### Opis
 
 W aplikacji został zakomentowany komponent, który wyświetla błednie liste elemntów, po której można
-filtrować (tzw. **HOTFIX**). Ta funckjonalność znajduje się w metodzie [render](https://github.com/dkarski/warsawjs-workshop-45/blob/master/src/app/file-manager/file-type-list/file-type-list.js#L34) klasy [FileTypeList](https://github.com/dkarski/warsawjs-workshop-45/blob/master/src/app/file-manager/file-type-list/file-type-list.js#L4). Aktualna implementacja
+filtrować (tzw. **[HOTFIX](https://github.com/dkarski/warsawjs-workshop-45/blob/master/src/app/file-manager/file-manager.js#L21)**). Ta funckjonalność znajduje się w metodzie [render](https://github.com/dkarski/warsawjs-workshop-45/blob/master/src/app/file-manager/file-type-list/file-type-list.js#L34) klasy [FileTypeList](https://github.com/dkarski/warsawjs-workshop-45/blob/master/src/app/file-manager/file-type-list/file-type-list.js#L4). Aktualna implementacja
 zwraca zduplikowane wartości, sprawiając że każdy dodany nowy plik wydłuża liste typów. Spraw by przekazywana lista 
 do metody generateHTMLString posiadała unikalne wartości.  
 
